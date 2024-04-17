@@ -11,7 +11,8 @@ import UserRoutes from "./Users/routes.js";
 const app = express()
 Hello(app)
 app.use(cors());
-mongoose.connect("mongodb+srv://Cluster12925:X1VFRl5VYlxP@cluster12925.7mxwdvp.mongodb.net/kanbas?retryWrites=true&w=majority")
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || "mongodb+srv://Cluster12925:X1VFRl5VYlxP@cluster12925.7mxwdvp.mongodb.net/kanbas?retryWrites=true&w=majority"
+mongoose.connect(CONNECTION_STRING)
 app.use(express.json());
 CourseRoutes(app);
 Lab5(app)
