@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const answerSchema = new mongoose.Schema({
     a_id: { type: String, required: true },
-    correct: { type: Boolean, required: true },
+    correct: { type: Boolean },
     description: { type: String, required: true }
 });
 
@@ -29,9 +29,9 @@ const quizSchema = new mongoose.Schema({
     one_question: { type: Boolean, required: true },
     web_cam: { type: Boolean, required: true },
     lock_question: { type: Boolean, required: true },
-    due_date: { type: Number, required: true },
-    avail_date: { type: Number, required: true },
-    until_date: { type: Number, required: true },
+    due_date: { type: Date, required: true },
+    avail_date: { type: Date, required: true },
+    until_date: { type: Date, required: true },
     questions: [questionSchema]
 }, { collection: "quizzes" });
 
