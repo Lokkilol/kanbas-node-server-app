@@ -1,19 +1,6 @@
 import mongoose from "mongoose";
+import questionSchema from "../Questions/schema.js";
 
-const answerSchema = new mongoose.Schema({
-    _id: { type: String},
-    correct: { type: Boolean },
-    description: { type: String, required: true }
-});
-
-const questionSchema = new mongoose.Schema({
-    _id: { type: String},
-    q_type: { type: String, required: true },
-    title: { type: String, required: true },
-    points: { type: Number, required: true },
-    question: { type: String, required: true },
-    answers: [answerSchema]
-});
 
 const quizSchema = new mongoose.Schema(
     {
