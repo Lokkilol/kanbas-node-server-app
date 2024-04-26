@@ -16,6 +16,7 @@ const quizSchema = new mongoose.Schema(
         time_limit: { type: Number, default: 20 },
         multiple_attempts: { type: Boolean, default: false }, 
         show_correct: { type: Boolean, default: false }, 
+        when_to_show: {type: Date, default: Date.now },
         access_code: { type: String, default: "" },
         one_question: { type: Boolean, default: true },
         web_cam: { type: Boolean, default: false },
